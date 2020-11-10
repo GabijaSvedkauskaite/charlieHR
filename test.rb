@@ -1,5 +1,3 @@
-# Thanks for the challenge. It was my first time being exposed to Ruby. Hope I understood the task right.
-
 require 'date' 
 
 class User
@@ -15,13 +13,8 @@ class User
   end
 #Returns a Date object for the user's current upcoming birthday
   def next_birthday
-    # x = bday , y = current date; x-y should give days remaining until next birthday. 
-    # It's logical to think about the birthdays that have already passed this year.
+   
      bday = Date.new(Date.today.year, date_of_birth.month, date_of_birth.day)
-
-    # Code in the comment below should work for the logic of birthdays that passed, but I can't get it right.
-    # bday += 1.year if Date.today >= bday 
-    
     bday += 365 if Date.today >= bday  #leap year problem. 
     (bday - Date.today).to_i
     # output : 1986-01-01=> -312; 1988-11-08=> 0; 1990-12-30=> 52
